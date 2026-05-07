@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "AI Real-Time Translator",
+  "version": "1.0",
+  "description": "Chrome 浏览器实时翻译 Agent，支持选中翻译和全页翻译",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://api-free.deepl.com/*",
+    "https://translation.googleapis.com/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Translator"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "translate-selection": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "翻译当前选中文本"
+    }
+  }
+}
