@@ -4,6 +4,7 @@
   "version": "1.0",
   "description": "Chrome 浏览器实时翻译 Agent，支持选中翻译和全页翻译",
   "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "scripting", "storage", "commands"],
   "host_permissions": [
     "https://api-free.deepl.com/*",
     "https://translation.googleapis.com/*",
