@@ -71,7 +71,6 @@ function collectTextNodes(root = document.body) {
   while (walker.nextNode()) {
     const node = walker.currentNode;
     if (node.nodeValue && node.nodeValue.trim() && isTranslatableNode(node)) {
-    if (node.nodeValue && node.nodeValue.trim()) {
       nodes.push(node);
     }
   }
@@ -103,10 +102,6 @@ document.addEventListener("mouseup", () => {
   const selected = getSelectedText();
   if (selected.length > 0) {
     debounceTranslateSelection();
-document.addEventListener("mouseup", async () => {
-  const selected = getSelectedText();
-  if (selected.length > 0) {
-    await translateSelection();
   }
 });
 

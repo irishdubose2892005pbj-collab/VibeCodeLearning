@@ -3,8 +3,12 @@
   "name": "AI Real-Time Translator",
   "version": "1.0",
   "description": "Chrome 浏览器实时翻译 Agent，支持选中翻译和全页翻译",
-  "permissions": ["activeTab", "scripting", "storage"],
-  "permissions": ["activeTab", "scripting", "storage", "commands"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "commands"
+  ],
   "host_permissions": [
     "https://api-free.deepl.com/*",
     "https://translation.googleapis.com/*",
@@ -20,9 +24,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["styles.css"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
       "run_at": "document_idle"
     }
   ],
